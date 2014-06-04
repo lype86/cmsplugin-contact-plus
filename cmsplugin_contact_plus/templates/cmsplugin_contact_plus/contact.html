@@ -1,6 +1,8 @@
 {% if form %}
-	<form action="" method="POST">{% csrf_token %}
+	<form class="contact-form" action="" method="POST">{% csrf_token %}
+		<h3>{{ contact.title }}</h3>
 		{{ form.as_p }}
+		<input type="reset"{% if contact.reset %} value="{{ contact.reset }}"{% endif %}/>
 		<input type="submit"{% if contact.submit %} value="{{ contact.submit }}"{% endif %} />
 	</form>
 {% else %}

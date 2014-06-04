@@ -25,8 +25,10 @@ class ContactPlus(CMSPlugin):
         verbose_name = "Contact Plus Form"
         verbose_name_plural = "Contact Plus Forms"
     recipient_email = models.EmailField(_("Email of recipients"), default=DEFAULT_FROM_EMAIL_ADDRESS)
+    title = models.CharField(_('Title form'), max_length=50)
     thanks = models.TextField(_('Message displayed after submitting the contact form.'))
     submit = models.CharField(_('Text for the Submit button.'), blank=True, max_length=30)
+    reset = models.CharField(_('Text for the Reset button'), blank=True, max_length=30)
     template = models.CharField(max_length=255,
                                 choices=TEMPLATE_CHOICES,
                                 default='cmsplugin_contact_plus/contact.html',
