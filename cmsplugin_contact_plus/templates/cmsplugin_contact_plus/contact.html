@@ -6,5 +6,7 @@
 		<input type="submit"{% if contact.submit %} value="{{ contact.submit }}"{% endif %} />
 	</form>
 {% else %}
-	{{ contact.thanks|safe }}
+  <div class="form-success">
+    <h3>{{ contact.thanks|safe }}</h3>
+  </div>
 {% endif %}
